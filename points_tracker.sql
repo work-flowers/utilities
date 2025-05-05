@@ -53,11 +53,11 @@ INNER JOIN google_sheets.company_ids AS ci
 	ON com.company_id = ci.attio_company_id
 
 -- link to Linear project id from Linear customer id
-LEFT JOIN google_sheets.project_ids AS proj
+INNER JOIN google_sheets.project_ids AS proj
 	ON ci.linear_customer_id = proj.linear_customer_id
 
 -- find any linear issues tied to linear project and within the current Stripe billing cycle
-LEFT JOIN linear.issue AS i
+INNER JOIN linear.issue AS i
 	ON proj.linear_project_id = i.project_id
 	AND (
 		DATE(i.started_at) BETWEEN DATE(sub.current_period_start) AND DATE(sub.current_period_end) 
