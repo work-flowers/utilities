@@ -59,7 +59,6 @@ INNER JOIN google_sheets.project_ids AS proj
 -- find any linear issues tied to linear project and within the current Stripe billing cycle
 INNER JOIN linear.issue AS i
 	ON proj.linear_project_id = i.project_id
-	AND DATE(COALESCE(i.completed_at, i.started_at, i.created_at)) BETWEEN DATE(sub.current_period_start) AND DATE(sub.current_period_end) 
 
 -- finally, pull Linear status name values
 INNER JOIN linear.workflow_state AS ws
@@ -68,4 +67,8 @@ WHERE
 	1 = 1
 	AND sub.status = 'active'
 	AND CURRENT_DATE BETWEEN DATE(sub.current_period_start) AND DATE(sub.current_period_end)
+	AND (
+		DATE(COALESCE(i.completed_at, i.started_at, i.created_at)) BETWEEN DATE(sub.current_period_start) AND DATE(sub.current_period_end)
+		OR ws.type = 'started'
+	)
 
