@@ -65,11 +65,12 @@ main AS (
 		)
 )
 
--- SELECT * 
--- FROM main;
-
-SELECT 
-	`Issue Status`,
-	SUM(`Points Assigned`) AS `Points Assigned`
+SELECT * 
 FROM main
-GROUP BY 1
+ORDER BY 2, 3 DESC
+
+-- SELECT 
+-- 	`Issue Status`,
+-- 	SUM(`Points Assigned`) AS `Points Assigned`
+-- FROM main
+-- GROUP BY 1
