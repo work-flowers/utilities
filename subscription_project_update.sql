@@ -3,7 +3,7 @@ WITH sub AS (
 	FROM stripe.subscription_history
 	-- we only want the most recent row for each subscription_id, since 
 	-- stripe.subscription_history is a versioned history table
-	QUALIFY ROW_NUMBER() OVER(PARTITION BY id ORDER BY created DESC) = 1
+	QUALIFY ROW_NUMBER() OVER(PARTITION BY id ORDER BY _fivetran_start DESC) = 1
 ),
 
 main AS (
