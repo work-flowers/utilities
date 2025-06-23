@@ -2,9 +2,9 @@ library(tidyverse)
 library(lubridate)
 
 # --- Inputs ---
-start_date <- as.Date("2025-05-09")
-end_date <- as.Date("2025-12-16")
-total_amount <- 79.64
+start_date <- as.Date("2025-06-20")
+end_date <- as.Date("2026-05-13")
+total_amount <- 112.41
 
 # Billing day = end_date day
 billing_day <- day(end_date)
