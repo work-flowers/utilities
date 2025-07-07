@@ -7,6 +7,7 @@ SELECT
 	DATE(i.completed_at) AS completed_date,-- Date the issue was completed (if completed)
 	i.created_at,                          -- Full timestamp of when the issue was created
 	ws.name AS status,                     -- Current workflow status (e.g., Backlog, In Progress, Done)
+	i.cycle_id,							   -- Cycle ID, if applicable
 	c.number AS cycle_number,              -- Linear cycle number (sprint or iteration, if any)
 	DATE(c.starts_at) AS cycle_start_date, -- Start date of the cycle containing this issue
 	DATE(c.ends_at) AS cycle_end           -- End date of the cycle containing this issue
