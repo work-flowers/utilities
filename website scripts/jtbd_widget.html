@@ -22,24 +22,37 @@
   	    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap');
 			.wf-pp{ 
 					font-family:'Inter',sans-serif; 
-					background:#1479e1; 
+			    background: transparent; /* changed from #2398E6 */
 					border-radius:16px; 
-					padding:16px; 
+					padding:8px; 
 					max-width:640px; 
 					margin:0 auto; 
 					overflow:hidden; 
 					isolation:isolate; 
 				}
-			  .wf-pp, .wf-pp * { mix-blend-mode:normal; }
-			  .wf-pp__viewport{ height:350px; overflow:hidden; position:relative; }
-			  .wf-pp__list{ display:flex; flex-direction:column; gap:12px; will-change:transform; }
-			  .wf-pp__list--anim{ animation:wf-pp-scroll 24s linear infinite; }
+			  .wf-pp, .wf-pp * { 
+				  mix-blend-mode:normal; 
+			  }
+			  .wf-pp__viewport{
+				  height:250px; 
+				  overflow:hidden; 
+				  position:relative; 
+			  }
+			  .wf-pp__list{ 
+				  display:flex; 
+				  flex-direction:column; 
+				  gap:12px; 
+				  will-change:transform; 
+			  }
+			  .wf-pp__list--anim{ 
+				  animation:wf-pp-scroll 24s linear infinite; 
+			  }
 			  .wf-pp__item{ 
 				  background:#fff; 
 				  color:#111; 
 				  padding:8px 16px; 
 				  border-radius:16px; 
-				  font-size:15px; 
+				  font-size:18px; 
 				  line-height:1.4; 
 					box-shadow:0 2px 8px rgba(0,0,0,0.15); /* <-- drop shadow */
 				  /* box-shadow:0 1px 3px rgba(0,0,0,.05); */
