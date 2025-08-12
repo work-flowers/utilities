@@ -1,0 +1,24 @@
+.navbar {
+    height: 100px;
+}
+.navbar-brand-logo {
+    min-height: 80px !important;
+    min-width: 80px !important;
+    max-height: 150px !important;
+    width: auto !important;
+    padding: none 10px;
+}
+@media (max-width: 600px) {
+    .navbar {
+        height: 70px !important;
+    }
+    .navbar-brand-logo {
+        min-height: 50px !important;
+        min-width: 50px !important;
+        max-height: 80px !important;
+        padding: 0 5px !important;
+    }
+}
+
+/* prevent first-child margins from creating a band of space at the top */
+.notion-row > .notion-column > .notion-callout > *:first-child { margin-top: 0; }

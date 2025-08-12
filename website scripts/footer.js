@@ -1,0 +1,108 @@
+<script type="text/javascript">
+  _linkedin_partner_id = "7383676";
+  window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+  window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+  </script><script type="text/javascript">
+  (function(l) {
+  if (!l){window.lintrk = function(a,b){window.lintrk.q.push([a,b])};
+  window.lintrk.q=[]}
+  var s = document.getElementsByTagName("script")[0];
+  var b = document.createElement("script");
+  b.type = "text/javascript";b.async = true;
+  b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+  s.parentNode.insertBefore(b, s);})(window.lintrk);
+</script>
+
+<!-- Normalise height for horizontally aligned callouts -->
+<script>
+(function () {
+  // How strict a "same row" check is (px of vertical tolerance)
+  const ROW_TOL = 6;
+
+  const $$ = (s, r=document) => Array.from(r.querySelectorAll(s));
+  const visible = el => {
+    if (!el) return false;
+    const cs = getComputedStyle(el);
+    if (cs.display === 'none' || cs.visibility === 'hidden') return false;
+    const r = el.getBoundingClientRect();
+    return r.width > 0 && r.height > 0;
+  };
+
+  // Find every Notion/Bullet multi-column row
+  function getRows() {
+    // Prefer rows Bullet tags (e.g., bullet-2-column / bullet-3-column),
+    // but also catch generic .notion-row in case class names vary
+    const rows = $$('.notion-row');
+    // keep rows that contain at least two visible callouts in direct columns
+    return rows.filter(row => {
+      const callouts = $$(':scope > .notion-column > .notion-callout, :scope > .notion-column > [class*="callout"]', row).filter(visible);
+      return callouts.length >= 2;
+    });
+  }
+
+  function clearHeights(els){ els.forEach(el => { el.style.minHeight = ''; el.style.height = ''; }); }
+
+  function sameRow(els){
+    const tops = els.map(e => Math.round(e.getBoundingClientRect().top));
+    return Math.max(...tops) - Math.min(...tops) <= ROW_TOL;
+  }
+
+  function equaliseRow(row){
+    // Grab only top-level callouts inside columns for this row
+    const cards = $$(':scope > .notion-column > .notion-callout, :scope > .notion-column > [class*="callout"]', row)
+      .filter(visible);
+
+    if (cards.length < 2) return;
+
+    // Reset to natural heights before measuring
+    clearHeights(cards);
+
+    // If they’ve stacked (each ~full width), skip equalising
+    const parentW = row.getBoundingClientRect().width || 0;
+    const stacked = cards.every(c => {
+      const w = c.getBoundingClientRect().width || 0;
+      return parentW && (w / parentW) > 0.9;
+    });
+    if (stacked || !sameRow(cards)) return;
+
+    // Measure and apply
+    const maxH = Math.max(...cards.map(c => c.getBoundingClientRect().height));
+    const target = Math.ceil(maxH);
+    cards.forEach(c => { c.style.minHeight = target + 'px'; });
+  }
+
+  // Re-run equalising for all rows
+  function run(){
+    getRows().forEach(equaliseRow);
+  }
+
+  // Re-run after images in a row finish loading (covers lazy loads)
+  function watchImages(){
+    getRows().forEach(row => {
+      const imgs = $$('img', row).filter(img => !img.complete);
+      if (!imgs.length) return;
+      let left = imgs.length;
+      const again = () => { if (--left === 0) run(); };
+      imgs.forEach(img => {
+        img.addEventListener('load', again, { once:true });
+        img.addEventListener('error', again, { once:true });
+      });
+      // safety pass in case some never fire
+      setTimeout(run, 1500);
+    });
+  }
+
+  // Lifecycle wiring
+  let t; const go = () => { clearTimeout(t); t = setTimeout(() => { run(); watchImages(); }, 80); };
+
+  document.addEventListener('DOMContentLoaded', go);
+  window.addEventListener('load', go);
+  window.addEventListener('resize', go);
+
+  // Respond to Notion/Bullet hydration and DOM changes
+  new MutationObserver(go).observe(document.documentElement, { childList:true, subtree:true });
+
+  // Fonts can reflow heights too
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(go).catch(()=>{});
+})();
+</script>
