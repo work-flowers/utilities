@@ -9,8 +9,8 @@ pacman::p_load(
 )
 
 # Define your Notion database ID (copy from URL, no need for hyphens)
-DATABASE_ID <- "21991b0711ac8103bdaddb2df65e6bba"  # Clay Contacts database
-
+# DATABASE_ID <- "21991b0711ac8103bdaddb2df65e6bba"  # Clay Contacts database
+DATABASE_ID <- "21991b0711ac806d99e8f151552c7d3c" # Companies database
 # extraction --------------------------------------------------------------
 
 # Fetch the entire database as a tibble using stored API key
