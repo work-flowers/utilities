@@ -13,7 +13,7 @@
     min-width: 80px !important;    /* Prevent logo from shrinking disproportionately */
     max-height: 150px !important;  /* Cap logo height */
     width: auto !important;        /* Let width scale proportionally */
-    padding: none 10px;            /* ⚠️ Typo here: 'none' isn’t valid — should be '0 10px' */
+    padding: 0 10px;           
 }
 
 /* Responsive adjustments for mobile (<= 600px wide) */
