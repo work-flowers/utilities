@@ -33,14 +33,24 @@
 /* ================================
    LIST BULLETS (OVERRIDE BULLET THEME)
    ================================ */
+/* Fix bullets ONLY for main pages (not blog pages) */
+.notion-page-content-inner > .notion-list-disc:not(.blog_main .notion-list-disc) {
+    padding-inline-start: 100px; 
+}
 
-/* Replace Bullet’s checkmark with a clean circular bullet */
-.notion-list-disc li:before {
-    content: "•";          /* Use a standard filled bullet character */
-    position: static;      /* Let it flow inline like normal text */
-    margin-right: 0.5em;   /* Add space between bullet and text */
-    font-size: 1.2em;      /* Slightly enlarge bullet for readability */
-    background: none;      /* Remove background icon hacks */
-    height: auto;          /* Reset forced dimensions */
+.notion-list-disc:not(.blog_main .notion-list-disc) {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+.notion-list-disc:not(.blog_main .notion-list-disc) li:before {
+    content: "";
+    margin-right: 0;
+    position: unset;
+    height: auto;
     width: auto;
+}
+
+.notion-list-disc:not(.blog_main .notion-list-disc) li {
+    margin-left: unset;
 }
