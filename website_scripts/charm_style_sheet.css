@@ -248,9 +248,22 @@ BROWN CALLOUT WITH BACKGROUND IMAGE
 	color: #ffffff !important;
 }
 
-.notion-brown_background_co > .notion-page-icon-inline {
-display: none;
+/* Applies shadow to all text in brown callouts */
+.notion-brown_background_co .notion-callout-text {
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
+
+/* Remove text shadow from embed widget content */
+.notion-brown_background_co .wf-pp,
+.notion-brown_background_co .wf-pp * {
+    text-shadow: none !important;
+}
+
+.notion-brown_background_co > .notion-page-icon-inline {
+	display: none;
+}
+
+
 
 .notion-page-content-inner > .notion-gray_background_co {
 background: var(--notion-gray_background_co);
