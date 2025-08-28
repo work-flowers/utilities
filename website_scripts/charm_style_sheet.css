@@ -231,7 +231,7 @@ BROWN CALLOUT WITH BACKGROUND IMAGE
 .notion-brown_background_co {
 /* Add your background image URL here */
 	background-image: 
-		linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+		linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
 		url('https://res.cloudinary.com/ddvqw2xgc/image/upload/v1756341201/blue_hills_background_qgo5ck.png');
 	background-size: cover;
 	background-position: center;
