@@ -230,13 +230,12 @@ BROWN CALLOUT WITH BACKGROUND IMAGE
 ================================ */
 .notion-brown_background_co {
 /* Add your background image URL here */
-background-image:
-    url('https://res.cloudinary.com/ddvqw2xgc/image/upload/v1756341201/blue_hills_background_qgo5ck.png');
-background-size: cover;
-background-position: center;
-background-repeat: no-repeat;
-/* Fallback color if image doesn't load */
-background-color: var(--notion-brown_background_co);
+	background-image: url('https://res.cloudinary.com/ddvqw2xgc/image/upload/v1756341201/blue_hills_background_qgo5ck.png');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	/* Fallback color if image doesn't load */
+	background-color: var(--notion-brown_background_co);
 }
 
 /* White text for brown callouts */
@@ -246,12 +245,7 @@ background-color: var(--notion-brown_background_co);
 .notion-brown_background_co strong,
 .notion-brown_background_co em,
 .notion-brown_background_co * {
-color: #ffffff !important;
-}
-
-/* Optional: Add text shadow for better readability */
-.notion-brown_background_co .notion-callout-text {
-text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+	color: #ffffff !important;
 }
 
 .notion-brown_background_co > .notion-page-icon-inline {
