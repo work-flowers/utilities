@@ -1,79 +1,102 @@
 <div id="wf-painpoints"></div>
 <script>
-    const WF_PAINPOINTS = [
-      "Can we automate onboarding when someone joins?",
-      "Can we auto-match invoices and receipts from my inbox to expenses in our accounting system?",
-      "Slack is noisy; we miss important updates",
-      "Leads aren’t routed fast enough",
-      "Can we set alerts for expiring NDAs or subscription auto-renewal deadlines?",
-      "Can we automate first drafts of product release notes?",
-      "I need a dashboard to track orders/refunds/support tickets",
-      "Can we ensure all employee accounts are deactivated upon termination?",
-      "Docs are scattered; knowledge is hard to find",
-      "Can we automate responses to FAQs from customers on our website/email/WhatsApp?"
-    ];
+const WF_PAINPOINTS = [
+	"Can we automate onboarding when someone joins?",
+	"Can we auto-match invoices and receipts from my inbox to expenses in our accounting system?",
+	"Slack is noisy; we miss important updates",
+	"Leads aren't routed fast enough",
+	"Can we set alerts for expiring NDAs or subscription auto-renewal deadlines?",
+	"Can we automate first drafts of product release notes?",
+	"I need a dashboard to track orders/refunds/support tickets",
+	"Can we ensure all employee accounts are deactivated upon termination?",
+	"Docs are scattered; knowledge is hard to find",
+	"Can we automate responses to FAQs from customers on our website/email/WhatsApp?"
+];
 
-    (function mount(){
-      const host = document.getElementById('wf-painpoints');
-      if (!host) return requestAnimationFrame(mount);
+(function mount(){
+const host = document.getElementById('wf-painpoints');
+if (!host) return requestAnimationFrame(mount);
 
-      // 1) Push styles to <head> so callout sanitisation/overflow doesn't nuke them
-      const css = `
-  	    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap');
-			.wf-pp{ 
-					font-family:'Inter',sans-serif; 
-			    background: transparent; /* changed from #2398E6 */
-					border-radius:16px; 
-					padding:8px; 
-					max-width:640px; 
-					margin:0 auto; 
-					overflow:hidden; 
-					isolation:isolate; 
-				}
-			  .wf-pp, .wf-pp * { 
-				  mix-blend-mode:normal; 
-			  }
-			  .wf-pp__viewport{
-				  height:250px; 
-				  overflow:hidden; 
-				  position:relative; 
-			  }
-			  .wf-pp__list{ 
-				  display:flex; 
-				  flex-direction:column; 
-				  gap:12px; 
-				  will-change:transform; 
-			  }
-			  .wf-pp__list--anim{ 
-				  animation:wf-pp-scroll 24s linear infinite; 
-			  }
-			  .wf-pp__item{ 
-				  background:#fff; 
-				  color:#111 !important;  /* Add !important */
-				  padding:8px 16px; 
-				  border-radius:16px; 
-				  font-size:18px; 
-				  line-height:1.4; 
-					box-shadow:0 2px 8px rgba(0,0,0,0.15); /* <-- drop shadow */
-				  /* box-shadow:0 1px 3px rgba(0,0,0,.05); */
-				  max-width:90%; 
-				  align-self:flex-start; 
-			  }
-			  @keyframes wf-pp-scroll { 0%{ transform:translateY(0) } 100%{ transform:translateY(-50%) } }
-			  @media (prefers-reduced-motion: reduce){ .wf-pp__list--anim{ animation:none } }`;
-      const style = document.createElement('style');
-      style.textContent = css;
-      document.head.appendChild(style);
+// 1) Push styles to <head> so callout sanitisation/overflow doesn't nuke them
+const css = `
+  @import url('<https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap>');
 
-      // 2) Inject the markup only (no <style> inside the callout content)
-      host.innerHTML = `
-        <div class="wf-pp">
-          <div class="wf-pp__viewport">
-            <div class="wf-pp__list wf-pp__list--anim">
-              ${WF_PAINPOINTS.map(t => `<div class="wf-pp__item">${t}</div>`).join('')}
-              ${WF_PAINPOINTS.map(t => `<div class="wf-pp__item" aria-hidden="true">${t}</div>`).join('')}
-            </div>
-          </div>
-        </div>`;
-    })();
+  /* Remove any spacing from Bullet's wrapper */
+  .notion-custom-code {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Ensure host container has no spacing */
+  #wf-painpoints {
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 1 !important;
+    font-size: 0 !important; /* Eliminate any text node spacing */
+  }
+
+  /* Reset font-size for the actual widget */
+  .wf-pp {
+    font-family: 'Inter', sans-serif;
+    font-size: initial; /* Reset font-size */
+    background: transparent;
+    border-radius: 16px;
+    padding: 8px;
+    max-width: 640px;
+    margin: 0 auto !important; /* Ensure no top margin */
+    overflow: hidden;
+    isolation: isolate;
+    vertical-align: top; /* Align to top */
+  }
+
+  .wf-pp, .wf-pp * {
+    mix-blend-mode: normal;
+  }
+
+  .wf-pp__viewport {
+    height: 250px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .wf-pp__list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    will-change: transform;
+  }
+
+  .wf-pp__list--anim {
+    animation: wf-pp-scroll 24s linear infinite;
+  }
+
+  .wf-pp__item {
+    background: #fff;
+    color: #111 !important;
+    padding: 8px 16px;
+    border-radius: 16px;
+    font-size: 18px;
+    line-height: 1.4;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    max-width: 90%;
+    align-self: flex-start;
+  }
+
+  @keyframes wf-pp-scroll {
+    0% { transform: translateY(0) }
+    100% { transform: translateY(-50%) }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .wf-pp__list--anim { animation: none }
+  }
+`;
+
+const style = document.createElement('style');
+style.textContent = css;
+document.head.appendChild(style);
+
+// 2) Inject the markup with no whitespace
+host.innerHTML = `<div class="wf-pp"><div class="wf-pp__viewport"><div class="wf-pp__list wf-pp__list--anim">${WF_PAINPOINTS.map(t => `<div class="wf-pp__item">${t}</div>`).join('')}${WF_PAINPOINTS.map(t => `<div class="wf-pp__item" aria-hidden="true">${t}</div>`).join('')}</div></div></div>`;
+})();
 </script>
