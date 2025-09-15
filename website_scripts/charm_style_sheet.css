@@ -490,10 +490,10 @@ margin-top: 1.08em;
 
 /* Let the title breathe and scale responsively */
 .header-below-thumbnail h1 {
-  line-height: 1.22;   /* 1.2–1.28 tends to look good for display text */
-  /* optional polish */
+  line-height: 1.25;
   letter-spacing: -0.01em;
   margin-bottom: 0.4em;
+  margin-left: 100px; /* aligns with .notion-page-content-inner padding */
 }
 
 @media (max-width: 640px) {
@@ -635,4 +635,10 @@ min-width: 50px !important;
 max-height: 80px !important;
 padding: 0 5px !important;
 }
+}
+
+/* Force blog post titles to respect heading size */
+.blog_main .blog_page_content .notion-h1,
+.header-below-thumbnail h1 {
+  font-size: var(--heading1) !important;
 }
