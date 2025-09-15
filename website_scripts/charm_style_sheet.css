@@ -74,12 +74,9 @@
 /* ================================
 NAVBAR STYLING - INTEGRATED
 ================================ */
-/* Default navbar height on desktop */
 .navbar {
   height: 100px;
 }
-
-/* Logo sizing for the brand inside the navbar */
 .navbar-brand-logo {
   min-height: 80px !important;
   min-width: 80px !important;
@@ -87,7 +84,6 @@ NAVBAR STYLING - INTEGRATED
   width: auto !important;
   padding: 0 10px;
 }
-
 .navbar-link,
 .navbar-link:hover {
   color: var(--navbar-fg-color);
@@ -201,7 +197,6 @@ NAVBAR STYLING - INTEGRATED
 /* ================================
 BULLET POINT FORMATTING - INTEGRATED
 ================================ */
-/* Fix bullets ONLY for main pages (not blog pages) */
 .notion-list-disc:not(.blog_main .notion-list-disc) {
   font-size: 1.063rem;
   font-size: 1rem;
@@ -210,7 +205,6 @@ BULLET POINT FORMATTING - INTEGRATED
   position: relative;
   margin-left: 20px;
 }
-
 .notion-list-disc:not(.blog_main .notion-list-disc) li:before {
   content: "";
   margin-right: 0;
@@ -220,7 +214,6 @@ BULLET POINT FORMATTING - INTEGRATED
   background-position: unset !important;
   background-size: unset !important;
 }
-
 .notion-list-disc:not(.blog_main .notion-list-disc) li {
   margin-left: unset;
 }
@@ -229,17 +222,13 @@ BULLET POINT FORMATTING - INTEGRATED
 BROWN CALLOUT WITH BACKGROUND IMAGE
 ================================ */
 .notion-brown_background_co {
-  /* Add your background image URL here */
   background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
     url("https://res.cloudinary.com/ddvqw2xgc/image/upload/v1756341201/blue_hills_background_qgo5ck.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  /* Fallback color if image doesn't load */
   background-color: var(--notion-brown_background_co);
 }
-
-/* White text for brown callouts */
 .notion-brown_background_co .notion-callout-text,
 .notion-brown_background_co .notion-text,
 .notion-brown_background_co .notion-link,
@@ -248,18 +237,13 @@ BROWN CALLOUT WITH BACKGROUND IMAGE
 .notion-brown_background_co * {
   color: #ffffff !important;
 }
-
-/* Applies shadow to all text in brown callouts */
 .notion-brown_background_co .notion-callout-text {
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
-
-/* Remove text shadow from embed widget content */
 .notion-brown_background_co .wf-pp,
 .notion-brown_background_co .wf-pp * {
   text-shadow: none !important;
 }
-
 .notion-brown_background_co > .notion-page-icon-inline {
   display: none;
 }
@@ -459,7 +443,6 @@ img.notion-page-icon {
   > .notion-list-disc:not(.blog_main .notion-list-disc) {
   padding-inline-start: 120px; /* 100px base + 20px for bullets */
 }
-
 .notion-list-disc li:before {
   margin-right: 10px;
   position: unset;
@@ -467,6 +450,10 @@ img.notion-page-icon {
 .notion-empty-icon {
   display: none !important;
 }
+
+/* ================================
+BLOG PAGE TYPOGRAPHY & SPACING
+================================ */
 .blog_main .blog_page_content {
   --font-size: calc(var(--base-font-size) + 2px);
   --quote-font-size: 1.143rem;
@@ -492,7 +479,6 @@ img.notion-page-icon {
   letter-spacing: -0.01em;
   margin-bottom: 0.4em;
 }
-
 @media (max-width: 640px) {
   .header-below-thumbnail h1 {
     line-height: 1.26;
@@ -540,6 +526,8 @@ img.notion-page-icon {
   display: flex;
   padding: calc(var(--padding)) calc(var(--padding) * 0.75);
 }
+
+/* Base font-size normalisation for various elements */
 .active-breadcrumb,
 .blog_main .blog-description,
 .blog_main .blog_page_content,
@@ -596,6 +584,10 @@ img.notion-page-icon {
 .blog_main .notion-callout {
   border: 1px solid var(--fg-color-0);
 }
+
+/* ================================
+RESPONSIVE
+================================ */
 @media screen and (max-width: 800px) {
   .notion-gallery-grid-size-medium {
     gap: 50px;
@@ -624,7 +616,6 @@ img.notion-page-icon {
   .notion-page-content-inner > * {
     padding: 0 20px;
   }
-  /* Navbar responsive adjustments - INTEGRATED */
   .navbar {
     height: 70px !important;
   }
@@ -636,48 +627,42 @@ img.notion-page-icon {
   }
 }
 
-/* Force blog post titles to respect heading size */
+/* ================================
+FINAL BLOG OVERRIDES (ORDER MATTERS)
+Align header and body on blog pages
+================================ */
 .blog_main .blog_page_content .notion-h1,
 .header-below-thumbnail h1 {
-    font-size: var(--heading1) !important;
-    line-height: 1.25;
-    letter-spacing: -0.01em;
-    margin-bottom: 0.4em;
+  font-size: var(--heading1) !important;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.4em;
 }
 
-/* Blog alignment fix - ensure header and content have same padding */
-.header-below-thumbnail,
-.blog_main .blog_page_content {
-    padding-left: 100px !important;
-    padding-right: 100px !important;
-}
-
-/* CRITICAL: Override the general notion padding for blog pages completely */
+/* 1) Disable global child padding inside blog pages */
 .blog_main .notion-page-content-inner > * {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
 
-/* Also ensure the blog_page_content itself doesn't inherit the general padding */
-.blog_main .notion-page-content-inner .blog_page_content {
-    padding-left: 100px !important;
-    padding-right: 100px !important;
+/* 2) Apply equal padding to header + content wrappers */
+.blog_main .header-below-thumbnail,
+.blog_main .blog_page_content {
+  padding-left: 100px;
+  padding-right: 100px;
 }
 
 @media screen and (max-width: 800px) {
-    .header-below-thumbnail,
-    .blog_main .blog_page_content,
-    .blog_main .notion-page-content-inner .blog_page_content {
-        padding-left: 10px !important;
-        padding-right: 10px !important;
-    }
+  .blog_main .header-below-thumbnail,
+  .blog_main .blog_page_content {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 }
-
 @media (max-width: 600px) {
-    .header-below-thumbnail,
-    .blog_main .blog_page_content,
-    .blog_main .notion-page-content-inner .blog_page_content {
-        padding-left: 20px !important;
-        padding-right: 20px !important;
-    }
+  .blog_main .header-below-thumbnail,
+  .blog_main .blog_page_content {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
