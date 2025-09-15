@@ -639,37 +639,45 @@ img.notion-page-icon {
 /* Force blog post titles to respect heading size */
 .blog_main .blog_page_content .notion-h1,
 .header-below-thumbnail h1 {
-  font-size: var(--heading1) !important;
-  line-height: 1.25;
-  letter-spacing: -0.01em;
-  margin-bottom: 0.4em;
+    font-size: var(--heading1) !important;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.4em;
 }
 
 /* Blog alignment fix - ensure header and content have same padding */
 .header-below-thumbnail,
 .blog_main .blog_page_content {
-  padding-left: 100px !important;
-  padding-right: 100px !important;
+    padding-left: 100px !important;
+    padding-right: 100px !important;
 }
 
-/* Override any notion default padding for blog content */
+/* CRITICAL: Override the general notion padding for blog pages completely */
 .blog_main .notion-page-content-inner > * {
-  padding-left: 0 !important;
-  padding-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+/* Also ensure the blog_page_content itself doesn't inherit the general padding */
+.blog_main .notion-page-content-inner .blog_page_content {
+    padding-left: 100px !important;
+    padding-right: 100px !important;
 }
 
 @media screen and (max-width: 800px) {
-  .header-below-thumbnail,
-  .blog_main .blog_page_content {
-    padding-left: 10px !important;
-    padding-right: 10px !important;
-  }
+    .header-below-thumbnail,
+    .blog_main .blog_page_content,
+    .blog_main .notion-page-content-inner .blog_page_content {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
 }
 
 @media (max-width: 600px) {
-  .header-below-thumbnail,
-  .blog_main .blog_page_content {
-    padding-left: 20px !important;
-    padding-right: 20px !important;
-  }
+    .header-below-thumbnail,
+    .blog_main .blog_page_content,
+    .blog_main .notion-page-content-inner .blog_page_content {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
 }
