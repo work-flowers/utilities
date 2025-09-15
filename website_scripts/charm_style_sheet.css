@@ -628,41 +628,32 @@ RESPONSIVE
 }
 
 /* ================================
-FINAL BLOG OVERRIDES (ORDER MATTERS)
-Align header and body on blog pages
-================================ */
-.blog_main .blog_page_content .notion-h1,
-.header-below-thumbnail h1 {
-  font-size: var(--heading1) !important;
-  line-height: 1.25;
-  letter-spacing: -0.01em;
-  margin-bottom: 0.4em;
-}
+   FINAL BLOG OVERRIDES - Fixed Alignment
+   ================================ */
 
-/* 1) Disable global child padding inside blog pages */
+/* Remove global padding for blog pages */
 .blog_main .notion-page-content-inner > * {
-  padding-left: 0 !important;
-  padding-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
 }
 
-/* 2) Apply equal padding to header + content wrappers */
-.blog_main .header-below-thumbnail,
-.blog_main .blog_page_content {
-  padding-left: 100px;
-  padding-right: 100px;
+/* Apply consistent padding to ALL direct children in blog pages */
+.blog_main .notion-page-content-inner > * {
+    padding-left: 100px !important;
+    padding-right: 100px !important;
 }
 
+/* Responsive adjustments */
 @media screen and (max-width: 800px) {
-  .blog_main .header-below-thumbnail,
-  .blog_main .blog_page_content {
-    padding-left: 10px;
-    padding-right: 10px;
-  }
+    .blog_main .notion-page-content-inner > * {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
 }
+
 @media (max-width: 600px) {
-  .blog_main .header-below-thumbnail,
-  .blog_main .blog_page_content {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
+    .blog_main .notion-page-content-inner > * {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
 }
