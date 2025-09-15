@@ -657,3 +657,23 @@ RESPONSIVE
         padding-right: 20px !important;
     }
 }
+
+/* BLOG: pixel-perfect left edge */
+.blog_main .header-below-thumbnail h1,
+.blog_main .header-below-thumbnail .blog-subtitle {
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}
+
+/* Ensure the first block of the article starts flush */
+.blog_main .blog_page_content > *:first-child {
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}
+
+/* Guard against background callouts adding side margins on blog pages */
+.blog_main .notion-page-content-inner > .notion-gray_background_co,
+.blog_main .notion-page-content-inner > .notion-blue_background_co {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
