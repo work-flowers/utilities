@@ -660,3 +660,20 @@ padding: 0 5px !important;
   letter-spacing: -0.01em;
   margin-bottom: 0.4em;
 }
+
+.blog_main .blog_page_content {
+    padding: 0 100px;
+}
+
+@media screen and (max-width: 800px) {
+    .blog_main .blog_page_content {
+        padding: 0 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    .blog_main .blog_page_content {
+        padding: 0 20px;
+    }
+}
+
