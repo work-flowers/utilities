@@ -631,49 +631,28 @@ RESPONSIVE
    FINAL BLOG OVERRIDES - Fixed Alignment
    ================================ */
 
-/* First, remove ALL padding from blog page children */
+/* Remove global padding for blog pages */
 .blog_main .notion-page-content-inner > * {
     padding-left: 0 !important;
     padding-right: 0 !important;
 }
 
-/* Apply consistent padding to header and content */
-.blog_main .header-below-thumbnail,
-.blog_main .blog_page_content {
+/* Apply consistent padding to ALL direct children in blog pages */
+.blog_main .notion-page-content-inner > * {
     padding-left: 100px !important;
     padding-right: 100px !important;
-}
-
-/* Also catch any other direct children that might contain title/description */
-.blog_main .notion-page-content-inner > div:not(.blog_page_content):not(.header-below-thumbnail) {
-    padding-left: 100px !important;
-    padding-right: 100px !important;
-}
-
-/* Remove any extra margins that might be causing indentation */
-.blog_main .header-below-thumbnail h1,
-.blog_main .header-below-thumbnail .blog-subtitle,
-.blog_main .blog-description {
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
 }
 
 /* Responsive adjustments */
 @media screen and (max-width: 800px) {
-    .blog_main .header-below-thumbnail,
-    .blog_main .blog_page_content,
-    .blog_main .notion-page-content-inner > div:not(.blog_page_content):not(.header-below-thumbnail) {
+    .blog_main .notion-page-content-inner > * {
         padding-left: 10px !important;
         padding-right: 10px !important;
     }
 }
 
 @media (max-width: 600px) {
-    .blog_main .header-below-thumbnail,
-    .blog_main .blog_page_content,
-    .blog_main .notion-page-content-inner > div:not(.blog_page_content):not(.header-below-thumbnail) {
+    .blog_main .notion-page-content-inner > * {
         padding-left: 20px !important;
         padding-right: 20px !important;
     }
