@@ -493,7 +493,6 @@ margin-top: 1.08em;
   line-height: 1.25;
   letter-spacing: -0.01em;
   margin-bottom: 0.4em;
-  margin-left: 100px; /* aligns with .notion-page-content-inner padding */
 }
 
 @media (max-width: 640px) {
@@ -641,4 +640,23 @@ padding: 0 5px !important;
 .blog_main .blog_page_content .notion-h1,
 .header-below-thumbnail h1 {
   font-size: var(--heading1) !important;
+}
+
+/* Blog header alignment fix: match the page-content padding */
+.header-below-thumbnail { padding: 0 100px; }
+
+@media screen and (max-width: 800px) {
+  .header-below-thumbnail { padding: 0 10px; }  /* mirrors your 800px rule */
+}
+@media (max-width: 600px) {
+  .header-below-thumbnail { padding: 0 20px; }  /* mirrors your 600px rule */
+}
+
+/* Keep big display size & comfortable leading */
+.blog_main .blog_page_content .notion-h1,
+.header-below-thumbnail h1 {
+  font-size: var(--heading1) !important;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.4em;
 }
