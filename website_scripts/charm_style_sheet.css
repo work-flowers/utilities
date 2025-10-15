@@ -677,16 +677,17 @@ RESPONSIVE
   margin-left: 0 !important;
   margin-right: 0 !important;
 }
-/* Full-width Elfsight logos */
+
+/* Fix Elfsight logo showcase width */
+.elfsight-app-2e277fd0-cb8b-4318-a1fc-4a8ef2f8e297 {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 auto !important;
+  display: block !important;
+}
+
+/* Remove side padding from the parent container */
 .notion-page-content-inner > *:has(.elfsight-app-2e277fd0-cb8b-4318-a1fc-4a8ef2f8e297) {
   padding-left: 0 !important;
   padding-right: 0 !important;
-}
-
-/* Optional: force true edge-to-edge if your layout centers content */
-.elfsight-app-2e277fd0-cb8b-4318-a1fc-4a8ef2f8e297 {
-  width: 100vw !important;
-  max-width: 100vw !important;
-  margin-left: calc(50% - 50vw) !important;
-  margin-right: calc(50% - 50vw) !important;
 }
