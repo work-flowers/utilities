@@ -688,12 +688,6 @@ ELFSIGHT WIDGET CENTERING FIX
   padding-right: 0 !important;
 }
 
-/* Ensure the widget itself is full-width */
-.elfsight-app-2e277fd0-cb8b-4318-a1fc-4a8ef2f8e297 {
-  width: 100% !important;
-  max-width: 100% !important;
-}
-
 /* Center the logos grid */
 .elfsight-app-2e277fd0-cb8b-4318-a1fc-4a8ef2f8e297 .eapps-logos__container,
 .elfsight-app-2e277fd0-cb8b-4318-a1fc-4a8ef2f8e297 .eapps-logos__list {
