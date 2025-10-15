@@ -692,3 +692,9 @@ RESPONSIVE
 .elfsight-app-2e277fd0-cb8b-4318-a1fc-4a8ef2f8e297 .eapps-logos__list {
   flex-wrap: wrap !important;
 }
+
+/* Remove side padding from Elfsight widget container */
+.notion-page-content-inner > div:has(.elfsight-app-2e277fd0-cb8b-4318-a1fc-4a8ef2f8e297) {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
