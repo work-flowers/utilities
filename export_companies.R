@@ -24,7 +24,8 @@ clean <- db %>%
   transmute(
     page_id = id, # Unique identifier for each contact
     name = `properties.Company Name.title.plain_text`,
-    campany_id = glue::glue("COM-{`properties.ID.unique_id.number`}")   # Main email address
+    url = `properties.Website.url`,
+    campany_id = glue::glue("COM-{`properties.ID.unique_id.number`}")   
   )
 
 
