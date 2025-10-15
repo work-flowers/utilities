@@ -678,23 +678,32 @@ RESPONSIVE
   margin-right: 0 !important;
 }
 
-/* Center Elfsight grid at all widths */
-.elfsight-app-2e277fd0-cb8b-4318-a1fc-4a8ef2f8e297 { width: 100% !important; }
+/* ================================
+ELFSIGHT WIDGET CENTERING FIX
+================================ */
 
+/* Target the wrapper div that Notion creates around the embed */
+.notion-page-content-inner > .notion-row {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* Ensure the widget itself is full-width */
+.elfsight-app-2e277fd0-cb8b-4318-a1fc-4a8ef2f8e297 {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+/* Center the logos grid */
 .elfsight-app-2e277fd0-cb8b-4318-a1fc-4a8ef2f8e297 .eapps-logos__container,
 .elfsight-app-2e277fd0-cb8b-4318-a1fc-4a8ef2f8e297 .eapps-logos__list {
   margin-left: auto !important;
   margin-right: auto !important;
-  justify-content: center !important;   /* key line */
+  justify-content: center !important;
+  display: flex !important;
 }
 
-/* optional: ensure wrapping stays tidy */
+/* Ensure wrapping stays tidy */
 .elfsight-app-2e277fd0-cb8b-4318-a1fc-4a8ef2f8e297 .eapps-logos__list {
   flex-wrap: wrap !important;
-}
-
-/* Remove side padding from Elfsight widget container */
-.notion-page-content-inner > div:has(.elfsight-app-2e277fd0-cb8b-4318-a1fc-4a8ef2f8e297) {
-  padding-left: 0 !important;
-  padding-right: 0 !important;
 }
