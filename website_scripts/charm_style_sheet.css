@@ -682,8 +682,8 @@ RESPONSIVE
 ELFSIGHT WIDGET CENTERING FIX
 ================================ */
 
-/* Target the wrapper div that Notion creates around the embed */
-.notion-page-content-inner > .notion-row {
+/* Remove padding from the custom code wrapper */
+.notion-page-content-inner > .notion-custom-code {
   padding-left: 0 !important;
   padding-right: 0 !important;
 }
