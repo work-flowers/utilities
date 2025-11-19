@@ -346,11 +346,13 @@ details[open] summary:before {
 .notion-gallery-grid-size-medium > .notion-collection-card {
   background: unset;
 }
+/* ================================
 .notion-collection-card-size-medium {
   border: none !important;
   border-radius: unset !important;
   box-shadow: none;
 }
+================================ */
 .notion-collection-card-size-medium
   > .notion-collection-card-body
   > .notion-collection-card-property
