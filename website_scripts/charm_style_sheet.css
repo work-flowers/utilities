@@ -374,8 +374,8 @@ details[open] summary:before {
   > .notion-collection-card-body
   > .notion-collection-card-property
   > .notion-property-text {
-  font-size: 1.125rem;
-  font-weight: 600;
+  font-size: 1.00rem;
+  font-weight: 400;
   white-space: pre-wrap;
 }
 .notion-collection-card-size-medium > .notion-collection-card-body {
