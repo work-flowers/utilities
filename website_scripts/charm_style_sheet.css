@@ -381,7 +381,7 @@ details[open] summary:before {
   white-space: pre-wrap;
 }
 .notion-collection-card-size-medium > .notion-collection-card-body {
-  padding: 15px 0;
+  padding: 24px;
 }
 .notion-gallery-grid {
   border: none;
