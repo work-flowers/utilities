@@ -334,7 +334,10 @@ details[open] summary:before {
 }
 .notion-collection-card-cover {
   border: none;
+  padding: 15px; /* This creates the space around the image */
+  box-sizing: border-box; /* Ensures padding doesn't make the card wider than it should be */
 }
+
 .notion-collection-card-cover img {
   border-radius: var(--border-radius);
 }
