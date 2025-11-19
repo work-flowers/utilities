@@ -597,7 +597,11 @@ RESPONSIVE
   .notion-gallery-grid-size-medium {
     gap: 50px;
     grid-auto-rows: auto;
-    grid-template-columns: repeat(1, minmax(600px, 1fr));
+	/* "max(260px, 33%)" means: 
+     "Be at least 260px, OR 33% of the screen—whichever is bigger." 
+     This effectively caps the columns at 3. 
+  */
+	grid-template-columns: repeat(auto-fill, minmax(max(260px, 33%), 1fr));
   }
   .notion-page-content-inner > * {
     padding: 0 10px;
