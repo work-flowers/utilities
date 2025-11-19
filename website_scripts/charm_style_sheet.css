@@ -597,7 +597,7 @@ RESPONSIVE
   .notion-gallery-grid-size-medium {
     gap: 50px;
     grid-auto-rows: auto;
-    grid-template-columns: repeat(1, minmax(260px, 1fr));
+    grid-template-columns: repeat(1, minmax(350px, 1fr));
   }
   .notion-page-content-inner > * {
     padding: 0 10px;
