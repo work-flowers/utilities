@@ -334,7 +334,7 @@ details[open] summary:before {
 }
 
 
-.notion-collection-card-cover {
+/*.notion-collection-card-cover {
   border: none;
   padding: 15px; 
   box-sizing: border-box; 
@@ -342,7 +342,7 @@ details[open] summary:before {
 
 .notion-collection-card-cover img {
   border-radius: var(--border-radius);
-}
+}*/
 /*.notion-gallery-grid-size-medium {
   gap: 50px;
   grid-auto-rows: auto;
@@ -597,15 +597,11 @@ BLOG PAGE TYPOGRAPHY & SPACING
 RESPONSIVE
 ================================ */
 @media screen and (max-width: 800px) {
-  .notion-gallery-grid-size-medium {
+/*  .notion-gallery-grid-size-medium {
     gap: 50px;
     grid-auto-rows: auto;
-	/* "max(260px, 33%)" means: 
-     "Be at least 260px, OR 33% of the screen—whichever is bigger." 
-     This effectively caps the columns at 3. 
-  */
 	grid-template-columns: repeat(auto-fill, minmax(max(260px, 33%), 1fr));
-  }
+  }*/
   .notion-page-content-inner > * {
     padding: 0 10px;
   }
