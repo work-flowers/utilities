@@ -186,10 +186,10 @@ NAVBAR STYLING - INTEGRATED
   border-radius: 5px;
   box-shadow: 0 0 2px #f7f9ff;
 }
-.notion-callout {
+/*.notion-callout {
   border: none;
   display: grid;
-}
+}*/
 .notion-hash-link {
   display: none;
 }
