@@ -343,14 +343,14 @@ details[open] summary:before {
 .notion-collection-card-cover img {
   border-radius: var(--border-radius);
 }
-.notion-gallery-grid-size-medium {
+/*.notion-gallery-grid-size-medium {
   gap: 50px;
   grid-auto-rows: auto;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
 }
 .notion-gallery-grid-size-medium > .notion-collection-card {
   background: unset;
-}
+}*/
 /*
 .notion-collection-card-size-medium {
   border: none !important;
@@ -358,7 +358,7 @@ details[open] summary:before {
   box-shadow: none;
 }*/
 
-.notion-collection-card-size-medium
+/*.notion-collection-card-size-medium
   > .notion-collection-card-body
   > .notion-collection-card-property
   > span
@@ -390,7 +390,7 @@ details[open] summary:before {
 }
 .notion-gallery-grid {
   border: none;
-}
+}*/
 .bullet-3-column > .notion-column > .notion-h2,
 .bullet-3-column > .notion-column > .notion-text {
   text-align: center;
