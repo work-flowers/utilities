@@ -190,6 +190,14 @@ NAVBAR STYLING - INTEGRATED
   border: none;
   display: grid;
 }*/
+.notion-link {
+  color: var(--notion-blue);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.notion-link:hover {
+  opacity: 0.8;
+}
 .notion-hash-link {
   display: none;
 }
