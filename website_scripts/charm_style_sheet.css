@@ -35,11 +35,6 @@
   --notion-gray-h: 205;
   --notion-gray-s: 25%;
   --notion-gray-l: 21%;
-  --notion-gray: hsl(
-    var(--notion-gray-h),
-    var(--notion-gray-s),
-    var(--notion-gray-l)
-  );
   --notion-gray_background: hsl(
     var(--notion-gray-h),
     var(--notion-gray-s),
@@ -126,7 +121,6 @@ NAVBAR STYLING - INTEGRATED
   display: none;
 }
 .notion-h1 {
-  font-size: 60px;
   font-size: var(--heading1);
   font-weight: 700;
   margin: 0;
@@ -135,7 +129,6 @@ NAVBAR STYLING - INTEGRATED
   color: var(--notion-gray_background_co);
 }
 .notion-h2 {
-  font-size: 40px;
   font-size: var(--heading2);
   font-weight: 700;
   margin: 0;
@@ -144,7 +137,6 @@ NAVBAR STYLING - INTEGRATED
   background: var(--navbar-btn-bg-color);
   border: none;
   border-radius: var(--border-radius);
-  font-size: 1.063rem;
   font-weight: 600;
   opacity: 1;
   padding: 15px 25px;
@@ -152,9 +144,6 @@ NAVBAR STYLING - INTEGRATED
 .bullet-btn,
 .bullet-btn:hover {
   color: var(--navbar-btn-fg-color);
-}
-.notion-text {
-  font-size: 1.25rem;
 }
 .notion-callout {
   padding-bottom: 30px;
@@ -186,10 +175,6 @@ NAVBAR STYLING - INTEGRATED
   border-radius: 5px;
   box-shadow: 0 0 2px #f7f9ff;
 }
-/*.notion-callout {
-  border: none;
-  display: grid;
-}*/
 .notion-link {
   color: var(--notion-blue);
   text-decoration: underline;
@@ -206,7 +191,6 @@ NAVBAR STYLING - INTEGRATED
 BULLET POINT FORMATTING - INTEGRATED
 ================================ */
 .notion-list-disc:not(.blog_main .notion-list-disc) {
-  font-size: 1.063rem;
   font-size: 1rem;
   font-weight: 400;
   list-style-type: disc;
@@ -342,63 +326,6 @@ details[open] summary:before {
 }
 
 
-/*.notion-collection-card-cover {
-  border: none;
-  padding: 15px; 
-  box-sizing: border-box; 
-}
-
-.notion-collection-card-cover img {
-  border-radius: var(--border-radius);
-}*/
-/*.notion-gallery-grid-size-medium {
-  gap: 50px;
-  grid-auto-rows: auto;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-}
-.notion-gallery-grid-size-medium > .notion-collection-card {
-  background: unset;
-}*/
-/*
-.notion-collection-card-size-medium {
-  border: none !important;
-  border-radius: unset !important;
-  box-shadow: none;
-}*/
-
-/*.notion-collection-card-size-medium
-  > .notion-collection-card-body
-  > .notion-collection-card-property
-  > span
-  > span
-  > span
-  > .notion-page-icon-image {
-  display: none;
-}
-.notion-collection-card-size-medium
-  > .notion-collection-card-body
-  > .notion-collection-card-property
-  > span
-  > span
-  > span
-  > .notion-page-title-text {
-  font-size: 1.563rem;
-  font-weight: 700;
-}
-.notion-collection-card-size-medium
-  > .notion-collection-card-body
-  > .notion-collection-card-property
-  > .notion-property-text {
-  font-size: 1.00rem;
-  font-weight: 400;
-  white-space: pre-wrap;
-}
-.notion-collection-card-size-medium > .notion-collection-card-body {
-  padding: 24px;
-}
-.notion-gallery-grid {
-  border: none;
-}*/
 .bullet-3-column > .notion-column > .notion-h2,
 .bullet-3-column > .notion-column > .notion-text {
   text-align: center;
@@ -418,7 +345,7 @@ details[open] summary:before {
 .blog_main {
   margin: 0 auto;
 }
-img {
+.notion-page-content-inner img {
   flex: 1 !important;
 }
 .notion-blue_background_co .notion-gray,
@@ -542,6 +469,7 @@ BLOG PAGE TYPOGRAPHY & SPACING
   padding: 3px 2px;
 }
 .blog_main .notion-callout {
+  border: 1px solid var(--fg-color-0);
   display: flex;
   padding: calc(var(--padding)) calc(var(--padding) * 0.75);
 }
@@ -600,24 +528,15 @@ BLOG PAGE TYPOGRAPHY & SPACING
 .blog_main .notion-property-checkbox-unchecked {
   margin-top: 8px;
 }
-.blog_main .notion-callout {
-  border: 1px solid var(--fg-color-0);
-}
-
 /* ================================
 RESPONSIVE
 ================================ */
 @media screen and (max-width: 800px) {
-/*  .notion-gallery-grid-size-medium {
-    gap: 50px;
-    grid-auto-rows: auto;
-	grid-template-columns: repeat(auto-fill, minmax(max(260px, 33%), 1fr));
-  }*/
   .notion-page-content-inner > * {
-    padding: 0 10px;
+    padding: 0 20px;
   }
   .notion-page-content-inner > .notion-gray_background_co {
-    margin: 0 10px;
+    margin: 0 20px;
     width: auto;
   }
   .notion-page-content-inner > .notion-blue_background_co {
@@ -632,9 +551,6 @@ RESPONSIVE
   }
 }
 @media (max-width: 600px) {
-  .notion-page-content-inner > * {
-    padding: 0 20px;
-  }
   .navbar {
     height: 70px !important;
   }
@@ -650,12 +566,6 @@ RESPONSIVE
    FINAL BLOG OVERRIDES - Fixed Alignment
    ================================ */
 
-/* Remove global padding for blog pages */
-.blog_main .notion-page-content-inner > * {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-}
-
 /* Apply consistent padding to ALL direct children in blog pages */
 .blog_main .notion-page-content-inner > * {
     padding-left: 100px !important;
@@ -664,13 +574,6 @@ RESPONSIVE
 
 /* Responsive adjustments */
 @media screen and (max-width: 800px) {
-    .blog_main .notion-page-content-inner > * {
-        padding-left: 10px !important;
-        padding-right: 10px !important;
-    }
-}
-
-@media (max-width: 600px) {
     .blog_main .notion-page-content-inner > * {
         padding-left: 20px !important;
         padding-right: 20px !important;
