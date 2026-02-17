@@ -453,6 +453,9 @@ img.notion-page-icon {
 .notion-page-content-inner .notion-list-disc {
   padding-inline-start: unset;
 }
+.notion-list-numbered {
+  padding-inline-start: 1.5em;
+}
 
 /* Updated to work with new bullet formatting */
 .notion-page-content-inner
