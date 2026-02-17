@@ -454,7 +454,7 @@ img.notion-page-icon {
   padding-inline-start: unset;
 }
 .notion-list-numbered {
-  padding-inline-start: 1.5em;
+  list-style-position: inside;
 }
 
 /* Updated to work with new bullet formatting */
