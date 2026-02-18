@@ -600,26 +600,3 @@ RESPONSIVE
   margin-right: 0 !important;
 }
 
-/* ================================
-ELFSIGHT WIDGET CENTERING FIX
-================================ */
-
-/* Remove padding from the custom code wrapper */
-.notion-page-content-inner > .notion-custom-code {
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-}
-
-/* Center the logos grid */
-.elfsight-app-2e277fd0-cb8b-4318-a1fc-4a8ef2f8e297 .eapps-logos__container,
-.elfsight-app-2e277fd0-cb8b-4318-a1fc-4a8ef2f8e297 .eapps-logos__list {
-  margin-left: auto !important;
-  margin-right: auto !important;
-  justify-content: center !important;
-  display: flex !important;
-}
-
-/* Ensure wrapping stays tidy */
-.elfsight-app-2e277fd0-cb8b-4318-a1fc-4a8ef2f8e297 .eapps-logos__list {
-  flex-wrap: wrap !important;
-}
