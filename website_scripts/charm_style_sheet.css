@@ -593,6 +593,11 @@ RESPONSIVE
   padding-left: 0 !important;
 }
 
+/* Stretch custom code embeds to full width (flex parent uses align-items: flex-start) */
+.notion-page-content-inner > .notion-custom-code {
+  align-self: stretch;
+}
+
 /* Guard against background callouts adding side margins on blog pages */
 .blog_main .notion-page-content-inner > .notion-gray_background_co,
 .blog_main .notion-page-content-inner > .notion-blue_background_co {
