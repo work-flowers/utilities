@@ -123,7 +123,7 @@ NAVBAR STYLING - INTEGRATED
 .notion-h1 {
   font-size: var(--heading1);
   font-weight: 700;
-  margin: 0;
+  margin: 1.2em 0 0.5em;
 }
 .notion-gray_background {
   color: var(--notion-gray_background_co);
@@ -131,7 +131,7 @@ NAVBAR STYLING - INTEGRATED
 .notion-h2 {
   font-size: var(--heading2);
   font-weight: 700;
-  margin: 0;
+  margin: 1em 0 0.4em;
 }
 .bullet-btn {
   background: var(--navbar-btn-bg-color);
@@ -509,6 +509,13 @@ BLOG PAGE TYPOGRAPHY & SPACING
 .notion-text,
 .notion-toggle > div > div {
   font-size: var(--base-font-size);
+}
+/* ================================
+TEXT SPACING FOR LONG-FORM PAGES
+================================ */
+.notion-text {
+  line-height: 1.65;
+  margin-bottom: 0.75em;
 }
 .blog_main .notion-callout > .notion-page-icon-inline {
   background: transparent;
